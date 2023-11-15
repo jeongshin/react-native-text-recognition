@@ -28,6 +28,10 @@
 	<string>Hi</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Hi</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string></string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string></string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
