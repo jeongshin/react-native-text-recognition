@@ -9,7 +9,7 @@ export default function App() {
 
   const [result, setResult] = useState('');
 
-  const { openCameraWithCrop } = useImagePicker();
+  const { pickSingleImageWithCrop } = useImagePicker();
 
   useEffect(() => {
     if (!imagePath) return;
@@ -31,7 +31,10 @@ export default function App() {
       <Button
         title="load image"
         onPress={async () => {
-          const image = await openCameraWithCrop({ width: 1024, height: 1024 });
+          const image = await pickSingleImageWithCrop({
+            width: 1024,
+            height: 1024,
+          });
           if (!image) return;
           setImagePath(image.path);
         }}
