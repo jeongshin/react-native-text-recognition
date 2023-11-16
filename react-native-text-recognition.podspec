@@ -16,6 +16,13 @@ Pod::Spec.new do |s|
 
   s.source_files = "ios/**/*.{h,m,mm,swift}"
 
+  # To recognize Latin script
+  s.dependency 'GoogleMLKit/TextRecognition', '4.0.0'
+  # To recognize Japanese script
+  s.dependency 'GoogleMLKit/TextRecognitionJapanese', '4.0.0'
+  # To recognize Korean script
+  s.dependency 'GoogleMLKit/TextRecognitionKorean', '4.0.0'
+
   # Use install_modules_dependencies helper to install the dependencies if React Native version >=0.71.0.
   # See https://github.com/facebook/react-native/blob/febf6b7f33fdb4904669f99d795eba4c0f95d7bf/scripts/cocoapods/new_architecture.rb#L79.
   if respond_to?(:install_modules_dependencies, true)

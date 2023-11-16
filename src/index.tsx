@@ -1,4 +1,5 @@
 import { NativeModules, Platform } from 'react-native';
+import type { TextRecognitionResponse } from './types';
 
 const LINKING_ERROR =
   `The package 'react-native-text-recognition' doesn't seem to be linked. Make sure: \n\n` +
@@ -17,6 +18,15 @@ const ReactNativeTextRecognition = NativeModules.ReactNativeTextRecognition
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return ReactNativeTextRecognition.multiply(a, b);
+export const SupportedScript = {
+  Korean: 'Korean',
+  Latin: 'Latin',
+  Japanese: 'Japanese',
+} as const;
+
+export async function recognize(
+  path: string,
+  script: keyof typeof SupportedScript
+): Promise<TextRecognitionResponse> {
+  return await ReactNativeTextRecognition.recognize(path, script);
 }
